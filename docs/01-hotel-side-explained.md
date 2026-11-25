@@ -138,3 +138,12 @@ Beyond daily operations, an industry-level system helps owners grow profits and 
    - Remembers repeat guests: their favorite room type, food allergies, birthday/anniversary dates, or VIP status—making every returning guest feel remembered.
 3. **Anti-Fraud & Security Logs:**
    - Every time someone gives a manual discount, cancels a restaurant bill, or refunds money, the system writes an **uneditable log** showing who did it and why. This stops internal theft and errors.
+
+---
+
+## How MongoDB Powers the Hotel Side Behind the Scenes
+
+- Every hotel's rooms, staff, dishes, pantry stock, and bills are isolated cleanly using its **`hotelId`** inside MongoDB.
+- **Dish recipes** are stored right inside each dish document in **`menu_items`**, so every food order instantly knows which ingredients to subtract from **`pantry_inventory`**.
+- **MongoDB Change Streams** push live updates the millisecond an order is placed or a room is checked out—so Kitchen Screens and Cleaning Staff phones update instantly without manual refreshing.
+- Security actions go into a permanent **`audit_logs`** collection for owner safety. *(See [05-mongodb-architecture-explained.md](05-mongodb-architecture-explained.md) for the full diagram.)*

@@ -38,6 +38,7 @@ The moment a customer books a hotel stay (say, 3 nights in Goa or Jaipur), our p
 2. **Nearby Best Visiting Places (Curated Around the Hotel):**
    - Shows top landmarks, hidden local gems, best nearby cafes/street food, scenic sunset points, and even essentials (ATMs, pharmacies, hospitals).
    - Displays **exact travel distance and time from the hotel** (*"12 mins drive from your hotel — Best visited at 5:00 PM"*).
+   - **Powered by MongoDB Location Search:** MongoDB stores GPS coordinates natively (`2dsphere` map index), making it super fast to automatically find the best places within 2 km, 5 km, or 10 km of whichever hotel the customer booked!
 3. **Practical Smart Tips:**
    - Entry fees, opening/closing hours (so guests don't reach a museum on the day it is closed), local dress tips, and weather alerts.
 

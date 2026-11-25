@@ -1,6 +1,7 @@
 # Unified Hospitality & Guest Experience Platform — Project Blueprint
 
 > **Current Project Stage:** Vision, Idea Framing & System Exploration  
+> **Compulsory Database & Backend Core:** MongoDB (Collections, ACID Transactions, Live Change Streams & Location Search)  
 > **Implementation Status:** Not started yet — we are currently structuring the entire vision clearly before writing any code.
 
 ---
@@ -31,10 +32,10 @@ flowchart TB
         C4["Smart Trip Planner & Nearby Places (Future Add-On)"]
     end
 
-    subgraph CORE["Connected Platform Brain (Real-Time Bridge)"]
-        B1["Live Room & Price Sync"]
+    subgraph CORE["Connected Platform Brain + MongoDB (Compulsory Backend Store)"]
+        B1["Live Room & Price Sync (MongoDB Transactions)"]
         B2["Payments & Unified Guest Bill"]
-        B3["Instant Alerts & Notifications"]
+        B3["Instant Alerts (MongoDB Change Streams)"]
         B4["Plug-In Bridge for Future Features"]
     end
 
@@ -99,3 +100,4 @@ Read each document below for a complete, plain-language explanation with step-by
 | **02 — Customer Side** | Search & booking, pre-check-in, room QR experience, checkout & reviews | [docs/02-customer-side-explained.md](docs/02-customer-side-explained.md) |
 | **03 — Future Add-Ons** | Trip Planner, nearby visiting places, partner marketplace & future plug-ins | [docs/03-future-addons-and-trip-planner.md](docs/03-future-addons-and-trip-planner.md) |
 | **04 — End-to-End Flows & Roadmap** | Complete guest-to-hotel story diagram, safety rules, phased roadmap & next questions | [docs/04-end-to-end-flows-and-roadmap.md](docs/04-end-to-end-flows-and-roadmap.md) |
+| **05 — MongoDB & Backend Structure** | Compulsory MongoDB setup, collections map, transactions, live Change Streams & GPS search | [docs/05-mongodb-architecture-explained.md](docs/05-mongodb-architecture-explained.md) |

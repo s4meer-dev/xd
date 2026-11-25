@@ -87,3 +87,11 @@ flowchart LR
 1. **Honest Verified Reviews:** Only guests who actually stayed can leave ratings—broken down clearly into *Room Comfort, Cleanliness, Food Quality, and Staff Service*.
 2. **Instant Tax Invoices:** Easy download of GST/tax invoices for personal or business reimbursement.
 3. **Repeat Guest Rewards:** Guests earn loyalty points or special perks when booking directly through our platform again, reducing the hotel's dependence on high-commission third-party sites.
+
+---
+
+## How MongoDB Powers the Customer Side Behind the Scenes
+
+- **Zero Double-Bookings:** During checkout, MongoDB uses an **atomic lock + Transaction** across the room calendar, booking record, and guest bill so two customers can never book the same last room at the same second.
+- **Live Room-Service Tracking:** When the chef taps *"Preparing"* or *"Ready"* on the Kitchen Screen, **MongoDB Change Streams** immediately send that live status straight to the guest's phone browser.
+- **One Clean Stay Bill:** Every meal or extra service ordered from the QR portal appends neatly into the guest's **`guest_bills`** document in MongoDB for an instant Express Check-Out. *(See [05-mongodb-architecture-explained.md](05-mongodb-architecture-explained.md) for full details.)*
